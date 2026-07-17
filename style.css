@@ -2761,3 +2761,596 @@ body.mobile-nav-lock {
     }
 
 }
+/* ==========================================================
+   PROJECT PREVIEW UPDATES
+   ONLY ADDITIONAL STYLING
+   ========================================================== */
+
+
+/* Project Live Status */
+
+.project-status {
+
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--accent-bright);
+
+    background:
+    rgba(0,255,204,.08);
+
+    padding:4px 10px;
+
+    border-radius:50px;
+
+    border:
+    1px solid rgba(0,255,204,.15);
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+
+}
+
+
+
+/* New Store Navigation */
+
+.store-logo {
+
+    font-family:var(--font-mono);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:var(--text-main);
+
+}
+
+
+.store-logo span {
+
+    color:var(--accent-bright);
+
+}
+
+
+
+.store-search {
+
+    font-size:10px;
+
+    color:var(--text-dim);
+
+    background:
+    rgba(255,255,255,.03);
+
+    border:
+    1px solid rgba(0,255,204,.08);
+
+    padding:
+    5px 14px;
+
+    border-radius:20px;
+
+}
+
+
+
+.store-icons {
+
+    font-size:12px;
+
+    color:var(--accent-bright);
+
+}
+
+
+
+
+/* Store Banner */
+
+
+.store-banner {
+
+    height:110px;
+
+    border-radius:14px;
+
+    margin-bottom:18px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    rgba(0,255,204,.12),
+    rgba(5,150,105,.05)
+    );
+
+
+    border:
+    1px solid rgba(0,255,204,.1);
+
+}
+
+
+.store-banner h6 {
+
+    font-family:var(--font-mono);
+
+    font-size:9px;
+
+    color:var(--text-muted);
+
+    letter-spacing:2px;
+
+}
+
+
+
+.store-banner h5 {
+
+    font-size:20px;
+
+    line-height:1.2;
+
+}
+
+
+.store-banner h5 span {
+
+    color:var(--accent-bright);
+
+}
+
+
+
+.store-banner button {
+
+    margin-top:8px;
+
+    padding:5px 14px;
+
+    border-radius:50px;
+
+    background:transparent;
+
+    color:var(--accent-bright);
+
+    border:
+    1px solid var(--accent-bright);
+
+    font-size:10px;
+
+}
+
+
+
+
+
+/* Project Feature Tags */
+
+
+.project-features {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.project-features span {
+
+
+    font-family:var(--font-mono);
+
+    font-size:10px;
+
+    color:var(--accent-bright);
+
+    padding:
+
+    5px 12px;
+
+
+    border-radius:50px;
+
+
+    background:
+    rgba(0,255,204,.04);
+
+
+    border:
+    1px solid rgba(0,255,204,.12);
+
+}
+
+
+
+
+
+
+/* Security Panel */
+
+
+.security-panel {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.security-panel div {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-family:var(--font-mono);
+
+    font-size:9px;
+
+    color:var(--text-muted);
+
+}
+
+
+
+.security-panel span {
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--accent-bright);
+
+    box-shadow:
+    0 0 10px var(--accent-bright);
+
+}
+
+
+
+
+
+/* Fake Input Text */
+
+.fake-input {
+
+    display:flex;
+
+    align-items:center;
+
+    padding-left:12px;
+
+    color:var(--text-muted);
+
+    font-family:var(--font-mono);
+
+    font-size:10px;
+
+}
+
+
+
+
+
+/* Project Preview Hover */
+
+
+.browser-window:hover,
+.form-preview:hover {
+
+    transform:
+    translateY(-5px);
+
+    border-color:
+    rgba(0,255,204,.35);
+
+}
+
+
+
+
+
+/* Mobile Adjustment */
+
+
+@media(max-width:768px){
+
+
+    .store-banner {
+
+        height:90px;
+
+    }
+
+
+    .store-banner h5 {
+
+        font-size:16px;
+
+    }
+
+
+    .product-preview-grid {
+
+        gap:8px;
+
+    }
+
+
+    .project-features {
+
+        margin-bottom:20px;
+
+    }
+
+
+}
+/* ==========================================================================
+   PROJECT SECTION EXTRA ANIMATIONS ONLY
+   ========================================================================== */
+
+
+/* Project cards entrance animation */
+
+.project-card {
+    opacity:0;
+    transform:translateY(60px);
+    animation:projectReveal 1s ease forwards;
+}
+
+
+/* Different delay for each project */
+
+.project-card:nth-child(1){
+    animation-delay:.2s;
+}
+
+.project-card:nth-child(2){
+    animation-delay:.4s;
+}
+
+.project-card:nth-child(3){
+    animation-delay:.6s;
+}
+
+
+
+@keyframes projectReveal {
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+
+/* Project visual floating animation */
+
+.project-visual {
+
+    animation:
+    projectFloat 6s ease-in-out infinite;
+
+}
+
+
+
+@keyframes projectFloat {
+
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+
+
+/* Browser preview shine effect */
+
+.browser-window,
+.form-preview {
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+
+
+.browser-window::after,
+.form-preview::after {
+
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+    left:-50%;
+
+    width:80%;
+    height:300%;
+
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(0,255,204,.15),
+        transparent
+    );
+
+
+    transform:rotate(25deg);
+
+    animation:
+    projectShine 5s infinite;
+
+
+}
+
+
+
+@keyframes projectShine {
+
+
+    0%{
+
+        left:-80%;
+    }
+
+
+    40%,
+    100%{
+
+        left:140%;
+
+    }
+
+}
+
+
+
+/* Product preview small animation */
+
+.product-item {
+
+
+    animation:
+    productPulse 3s ease-in-out infinite;
+
+
+}
+
+
+.product-item:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+
+.product-item:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+
+
+@keyframes productPulse {
+
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+/* Project button breathing glow */
+
+.project-button {
+
+
+    animation:
+    buttonGlow 3s infinite;
+
+}
+
+
+
+@keyframes buttonGlow {
+
+
+    0%,
+    100%{
+
+        box-shadow:
+        0 4px 15px rgba(0,255,204,.15);
+
+    }
+
+
+    50%{
+
+        box-shadow:
+        0 8px 30px rgba(0,255,204,.35);
+
+    }
+
+}
+
+
+
+/* Disable heavy animations on mobile */
+
+@media(max-width:768px){
+
+
+    .project-visual,
+    .product-item,
+    .project-button{
+
+        animation:none;
+
+    }
+
+
+}
