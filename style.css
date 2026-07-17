@@ -2369,6 +2369,11 @@ body.mobile-nav-lock {
 
     }
 
+    /* FIX: Hides the "Establish Connection" button when mobile menu triggers */
+    .desktop-only {
+        display: none !important;
+    }
+
 }
 
 
