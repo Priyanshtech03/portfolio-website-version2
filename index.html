@@ -272,6 +272,7 @@
         </section>
 
         <!-- Projects Section / Selected Build Implementations -->
+      <!-- Projects Section / Selected Build Implementations -->
         <section class="section projects reveal" id="projects" aria-labelledby="projects-title">
             <div class="section-label">
                 <span>03 //</span> <h2 id="projects-title" class="label-text">PRODUCTION WORKPLACE</h2>
@@ -295,12 +296,12 @@
                             <div class="store-preview">
                                 <div class="store-nav">
                                     <strong>COMMERCE_ENGINE // v1.0</strong>
-                                    <span>⌕ Query inventory...</span>
+                                    <span class="search-input">⌕ Query inventory...</span>
                                 </div>
                                 <div class="product-preview-grid">
-                                    <div><span></span><p>Module Alpha</p></div>
-                                    <div><span></span><p>Module Beta</p></div>
-                                    <div><span></span><p>Module Gamma</p></div>
+                                    <div class="product-item"><span></span><p>Module Alpha</p></div>
+                                    <div class="product-item"><span></span><p>Module Beta</p></div>
+                                    <div class="product-item"><span></span><p>Module Gamma</p></div>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +314,7 @@
                             <span>Semantic HTML5</span><span>Advanced Layout Grids</span><span>Dynamic State Logic (JS)</span>
                         </div>
                         <a href="https://priyanshtech03.github.io/shopping-website/" class="project-button" target="_blank" rel="noopener noreferrer" aria-label="Launch E-Commerce Live Build in New Window">
-                            Initialize Live System <span>↗</span>
+                            Initialize Live System <span class="btn-arrow">↗</span>
                         </a>
                     </div>
                 </article>
@@ -322,13 +323,27 @@
                 <article class="project-card project-reverse text-reveal-trigger">
                     <div class="project-visual">
                         <div class="form-preview">
-                            <div class="form-logo" aria-hidden="true">P</div>
-                            <h5>Identity Verification Gateway</h5>
-                            <p class="form-meta-text">SECURE GATEWAY SUBSYSTEM</p>
-                            <div class="fake-input" aria-hidden="true"></div>
-                            <div class="fake-input" aria-hidden="true"></div>
+                            <div class="form-header">
+                                <div class="form-logo" aria-hidden="true">P</div>
+                                <div>
+                                    <h5>Identity Verification Gateway</h5>
+                                    <p class="form-meta-text">SECURE GATEWAY SUBSYSTEM</p>
+                                </div>
+                            </div>
+                            <div class="form-fields">
+                                <div class="fake-input-wrapper">
+                                    <span class="input-label">SYS_AUTH // USER_ID</span>
+                                    <div class="fake-input" aria-hidden="true"></div>
+                                </div>
+                                <div class="fake-input-wrapper">
+                                    <span class="input-label">SYS_AUTH // PASSKEY</span>
+                                    <div class="fake-input" aria-hidden="true"></div>
+                                </div>
+                            </div>
                             <div class="fake-strength" aria-hidden="true">
-                                <span></span><span></span><span></span>
+                                <span class="strength-bar active"></span>
+                                <span class="strength-bar active"></span>
+                                <span class="strength-bar"></span>
                             </div>
                             <div class="fake-button" aria-hidden="true">EXECUTE VALIDATION</div>
                         </div>
@@ -341,13 +356,12 @@
                             <span>Vanilla DOM Engine</span><span>Regex Assertions</span><span>Micro Interaction Vectors</span>
                         </div>
                         <a href="https://priyanshtech03.github.io/Registration_form-_verstion_2/" class="project-button" target="_blank" rel="noopener noreferrer" aria-label="Launch Registration Engine Live Build in New Window">
-                            Initialize Live System <span>↗</span>
+                            Initialize Live System <span class="btn-arrow">↗</span>
                         </a>
                     </div>
                 </article>
             </div>
         </section>
-
         <!-- Contact Section / Communications Hub -->
         <section class="section contact reveal" id="contact" aria-labelledby="contact-title">
             <div class="contact-label">COMMUNICATIONS SUB-ROUTINE</div>
