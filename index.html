@@ -1,291 +1,392 @@
-/**
- * ==========================================================================
- * 1. PLATFORM CONFIGURATION & MATRIX STATE INITIALIZATION
- * ==========================================================================
- */
-document.addEventListener("DOMContentLoaded", () => {
-    // Global Element Matrix Cache
-    const dom = {
-        header: document.getElementById("header"),
-        progressBar: document.getElementById("progressBar"),
-        cursor: document.getElementById("cursor"),
-        canvas: document.getElementById("bg-canvas"),
-        navLinks: document.querySelectorAll(".nav-lnk"),
-        revealElements: document.querySelectorAll(".reveal"),
-        tiltCards: document.querySelectorAll("[data-tilt]"),
-        glowButtons: document.querySelectorAll(".glow-btn-target"),
-        // Added Menu Bar Controls
-        menuToggle: document.getElementById("menuToggle"),
-        mobileOverlay: document.getElementById("mobileOverlay"),
-        mobileLinks: document.querySelectorAll(".mobile-nav-lnk")
-    };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Priyansh Uchadadiya - BCA Student, Frontend Architect, and Interactive Systems Engineer">
+    <meta name="author" content="Priyansh Uchadadiya">
+    <meta name="theme-color" content="#020504">
+    <title>Priyansh Uchadadiya — Portfolio & Systems Architecture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    // System Capabilities Matrix
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    <!-- Performance Metric Scroll Tracker -->
+    <div class="scroll-progress" id="progressBar" role="presentation"></div>
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
+    <!-- Interactive Cyber-Emerald Particle Canvas Background -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="page-glow glow-left" aria-hidden="true"></div>
+    <div class="page-glow glow-right" aria-hidden="true"></div>
 
-    /**
-     * ==========================================================================
-     * 2. INTERACTIVE MENU BAR & MOBILE NAVIGATION ROUTINES
-     * ==========================================================================
-     */
-    if (dom.menuToggle && dom.mobileOverlay) {
-        const toggleMobileMenu = () => {
-            const isOpen = dom.mobileOverlay.classList.contains("is-open");
+    <!-- Hardware Accelerated Interactive Cursor Ring -->
+    <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
+
+    <!-- App Header / Glassmorphic Navigation Matrix -->
+    <header class="header" id="header">
+        <nav class="navbar" aria-label="Main Navigation Hierarchy">
+            <button class="menu-toggle" id="menu-toggle">
+    ☰
+</button>
+            <a href="#home" class="logo" aria-label="Priyansh Uchadadiya Home">PRIYANSH<span>.</span></a>
             
-            if (!isOpen) {
-                // Open Subsystem
-                dom.mobileOverlay.classList.add("is-open");
-                dom.menuToggle.classList.add("is-active");
-                dom.menuToggle.setAttribute("aria-expanded", "true");
-                dom.mobileOverlay.setAttribute("aria-hidden", "false");
-                document.body.classList.add("mobile-nav-lock");
-            } else {
-                // Collapse Subsystem
-                dom.mobileOverlay.classList.remove("is-open");
-                dom.menuToggle.classList.remove("is-active");
-                dom.menuToggle.setAttribute("aria-expanded", "false");
-                dom.mobileOverlay.setAttribute("aria-hidden", "true");
-                document.body.classList.remove("mobile-nav-lock");
-            }
-        };
+            <!-- Desktop Navigation Menu Container -->
+            <div class="nav-menu" role="menubar">
+                <a href="#home" class="nav-lnk active" role="menuitem">Home</a>
+                <a href="#about" class="nav-lnk" role="menuitem">About</a>
+                <a href="#skills" class="nav-lnk" role="menuitem">Skills</a>
+                <a href="#projects" class="nav-lnk" role="menuitem">Projects</a>
+                <a href="#contact" class="nav-lnk" role="menuitem">Contact</a>
+            </div>
 
-        dom.menuToggle.addEventListener("click", toggleMobileMenu);
-
-        // Auto Close on Mobile Link Selection Intercept
-        dom.mobileLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                if (dom.mobileOverlay.classList.contains("is-open")) {
-                    toggleMobileMenu();
-                }
-            });
-        });
-    }
-
-    /**
-     * ==========================================================================
-     * 3. ASYNC CORE RENDERING ENGINE (CYBER-EMERALD PARTICLES)
-     * ==========================================================================
-     */
-    if (dom.canvas) {
-        const ctx = dom.canvas.getContext("2d");
-        let particles = [];
-        let animationFrameId;
-
-        const resizeCanvas = () => {
-            dom.canvas.width = window.innerWidth;
-            dom.canvas.height = window.innerHeight;
-        };
-        window.addEventListener("resize", resizeCanvas);
-        resizeCanvas();
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * dom.canvas.width;
-                this.y = Math.random() * dom.canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = Math.random() * 0.4 - 0.2;
-                this.speedY = Math.random() * 0.4 - 0.2;
-                this.life = Math.random() * 100 + 50;
-                this.alpha = Math.random() * 0.3 + 0.05;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x < 0 || this.x > dom.canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > dom.canvas.height) this.speedY *= -1;
-            }
-            draw() {
-                ctx.fillStyle = `rgba(0, 255, 204, ${this.alpha})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        const initParticles = () => {
-            const count = Math.min(Math.floor(window.innerWidth / 15), 90);
-            particles = Array.from({ length: count }, () => new Particle());
-        };
-        initParticles();
-
-        const renderLoop = () => {
-            ctx.clearRect(0, 0, dom.canvas.width, dom.canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            animationFrameId = requestAnimationFrame(renderLoop);
-        };
-        renderLoop();
-
-        let resizeTimeout;
-        window.addEventListener("resize", () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                initParticles();
-            }, 250);
-        });
-    }
-
-    /**
-     * ==========================================================================
-     * 4. HARDWARE-ACCELERATED CURSOR ENGINE
-     * ==========================================================================
-     */
-    if (dom.cursor && !isTouchDevice) {
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-        const interpolationFactor = 0.16;
-
-        window.addEventListener("mousemove", (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        const updateCursor = () => {
-            cursorX += (mouseX - cursorX) * interpolationFactor;
-            cursorY += (mouseY - cursorY) * interpolationFactor;
-            dom.cursor.style.left = `${cursorX}px`;
-            dom.cursor.style.top = `${cursorY}px`;
-            requestAnimationFrame(updateCursor);
-        };
-        updateCursor();
-
-        const hoverTargets = document.querySelectorAll("a, button, .interactive-intent, [role='menuitem']");
-        hoverTargets.forEach(target => {
-            target.addEventListener("mouseenter", () => dom.cursor.classList.add("hovered"));
-            target.addEventListener("mouseleave", () => dom.cursor.classList.remove("hovered"));
-        });
-    } else if (dom.cursor) {
-        dom.cursor.style.display = "none";
-    }
-
-    /**
-     * ==========================================================================
-     * 5. SCROLL METRICS CONTROLLER & ACTIVE NAV SYNCING
-     * ==========================================================================
-     */
-    const handleScrollMetrics = () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        
-        if (dom.progressBar && docHeight > 0) {
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            dom.progressBar.style.width = `${scrollPercent}%`;
-        }
-
-        if (dom.header) {
-            if (scrollTop > 40) {
-                dom.header.classList.add("scrolled");
-            } else {
-                dom.header.classList.remove("scrolled");
-            }
-        }
-
-        const sections = document.querySelectorAll("section[id]");
-        let currentActiveSectionId = "";
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 180;
-            const sectionHeight = section.offsetHeight;
-            if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
-                currentActiveSectionId = section.getAttribute("id");
-            }
-        });
-
-        // Dynamic sync routine covering both Desktop and Mobile Menu links concurrently
-        if (currentActiveSectionId) {
-            dom.navLinks.forEach(link => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === `#${currentActiveSectionId}`) link.classList.add("active");
-            });
-            dom.mobileLinks.forEach(link => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === `#${currentActiveSectionId}`) link.classList.add("active");
-            });
-        }
-    };
-
-    window.addEventListener("scroll", handleScrollMetrics, { passive: true });
-    handleScrollMetrics();
-
-    /**
-     * ==========================================================================
-     * 6. MOUSE TRACKING MASK EFFECTS & 3D ISOMETRIC TILT
-     * ==========================================================================
-     */
-    const applyMouseCoordinatesToElement = (e, element) => {
-        const bounds = element.getBoundingClientRect();
-        const x = e.clientX - bounds.left;
-        const y = e.clientY - bounds.top;
-        element.style.setProperty("--mouse-x", `${x}px`);
-        element.style.setProperty("--mouse-y", `${y}px`);
-        return { x, y, bounds };
-    };
-
-    const radialContainers = document.querySelectorAll(".identity-card, .mini-card, .skill-card, .contact-links a");
-    radialContainers.forEach(container => {
-        container.addEventListener("mousemove", (e) => applyMouseCoordinatesToElement(e, container));
-    });
-
-    dom.glowButtons.forEach(btn => {
-        btn.addEventListener("mousemove", (e) => {
-            const coordinateData = applyMouseCoordinatesToElement(e, btn);
-            btn.style.setProperty("--x", `${coordinateData.x}px`);
-            btn.style.setProperty("--y", `${coordinateData.y}px`);
-        });
-    });
-
-    if (!isTouchDevice && dom.tiltCards.length > 0) {
-        dom.tiltCards.forEach(card => {
-            card.addEventListener("mousemove", (e) => {
-                const bounds = card.getBoundingClientRect();
-                const mouseX = e.clientX - bounds.left;
-                const mouseY = e.clientY - bounds.top;
+            <!-- Kinetic Action Group Interface -->
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact glow-btn-target desktop-only" aria-label="Initiate Consultation Channel">
+                    Establish Connection <span>↗</span>
+                </a>
                 
-                const rotateX = ((mouseY / bounds.height) - 0.5) * -20;
-                const rotateY = ((mouseX / bounds.width) - 0.5) * 20;
+                <!-- Dynamic Hardware-Accelerated Mobile Menu Trigger -->
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Mobile Interface Menu" aria-expanded="false" aria-controls="mobileOverlay">
+                    <span class="bar-line"></span>
+                    <span class="bar-line"></span>
+                    <span class="bar-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
+    <!-- Full-Screen Interactive Mobile Navigation Overlay Subsystem -->
+    <div class="mobile-nav-overlay" id="mobileOverlay" aria-hidden="true">
+        <div class="overlay-glow" aria-hidden="true"></div>
+        <div class="overlay-container">
+            <span class="overlay-meta-label">SYSTEM_INDEX // NAVIGATION_LINKS</span>
+            <div class="mobile-menu-links" role="menu">
+                <a href="#home" class="mobile-nav-lnk" role="menuitem"><span>01 /</span> HOME</a>
+                <a href="#about" class="mobile-nav-lnk" role="menuitem"><span>02 /</span> TECHNICAL Dossier</a>
+                <a href="#skills" class="mobile-nav-lnk" role="menuitem"><span>03 /</span> CORE COMPETENCIES</a>
+                <a href="#projects" class="mobile-nav-lnk" role="menuitem"><span>04 /</span> PRODUCTION WORKPLACE</a>
+                <a href="#contact" class="mobile-nav-lnk" role="menuitem"><span>05 /</span> COMMUNICATIONS</a>
+            </div>
+            <div class="overlay-footer">
+                <a href="mailto:priynshuachadadiya@gmail.com" class="overlay-email">priynshuachadadiya@gmail.com</a>
+                <p>SYS_STATUS // ONLINE</p>
+            </div>
+        </div>
+    </div>
 
-            card.addEventListener("mouseleave", () => {
-                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-            });
-        });
-    }
+    <main id="main-content">
+        <!-- Hero Section / Context Initialization -->
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-top reveal active">
+                <div class="availability" role="status">
+                    <span class="live-dot"></span>
+                    ACTIVE / OPEN TO ADVANCED INTERACTIVE BUILDS
+                </div>
+                <p class="hero-year">SYSTEM_CORE // v2.6</p>
+            </div>
 
-    /**
-     * ==========================================================================
-     * 7. HIGH PERFORMANCE VIEWPORT REVEAL PIPELINE
-     * ==========================================================================
-     */
-    if (dom.revealElements.length > 0) {
-        const revealOptions = {
-            root: null,
-            threshold: 0.12,
-            rootMargin: "0px 0px -40px 0px"
-        };
+            <div class="hero-layout">
+                <div class="hero-main reveal active">
+                    <h1 id="hero-title">Engineering fluid <span>digital interfaces</span> through pure, semantic logic.</h1>
+                    <div class="hero-bottom">
+                        <p class="hero-description">
+                            Computer Applications student specialized in building high-fidelity web layouts, robust application interfaces, and highly performant user interactions.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="main-button glow-btn-target">
+                                Analyze Projects <span>↗</span>
+                            </a>
+                            <a href="#about" class="secondary-text-link">
+                                Core Dossier ↓
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-        const revealIntersectionObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, revealOptions);
+                <!-- Bento Identity Card Matrix -->
+                <div class="identity-card reveal active" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-top">
+                        <span>01 // PRINCIPAL</span>
+                        <span class="system-status">SYS_OK</span>
+                    </div>
+                    <div class="identity-center">
+                        <div class="initial">P</div>
+                        <p class="card-subtitle">DEVELOPER PROFILES</p>
+                        <h2>PRIYANSH<br><span class="highlight-surname">UCHADADIYA</span></h2>
+                    </div>
+                    <div class="identity-footer">
+                        <p>BCA SYSTEMS INTERFACE ARCHITECT</p>
+                        <span>GUJARAT, IN</span>
+                    </div>
+                </div>
+            </div>
 
-        dom.revealElements.forEach(el => revealIntersectionObserver.observe(el));
-    }
-     const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-});
+            <!-- Kinetic Marquee Tech Strip -->
+            <div class="tech-strip reveal active" role="marquee" aria-label="Core Technology Competencies">
+                <div class="tech-track">
+                    <span>HTML5 ENGINE <i>✦</i></span><span>DYNAMIC CSS3 <i>✦</i></span><span>ES6+ JAVASCRIPT <i>✦</i></span>
+                    <span>COMPUTATIONAL C <i>✦</i></span><span>RELATIONAL SQL <i>✦</i></span><span>DBMS ARCHITECTURE <i>✦</i></span>
+                    <span>DATA STRUCTURES <i>✦</i></span>
+                    <!-- Seamless Loop Array Duplication -->
+                    <span>HTML5 ENGINE <i>✦</i></span><span>DYNAMIC CSS3 <i>✦</i></span><span>ES6+ JAVASCRIPT <i>✦</i></span>
+                    <span>COMPUTATIONAL C <i>✦</i></span><span>RELATIONAL SQL <i>✦</i></span><span>DBMS ARCHITECTURE <i>✦</i></span>
+                    <span>DATA STRUCTURES <i>✦</i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section / Technical Dossier -->
+        <section class="section about reveal" id="about" aria-labelledby="about-title">
+            <div class="section-label">
+                <span>01 //</span> <h2 id="about-title" class="label-text">TECHNICAL PROFILE</h2>
+            </div>
+
+            <div class="about-layout">
+                <div class="about-heading">
+                    <h3>Obsessed with code clarity, structural optimization, and <span>sub-millisecond responsiveness</span>.</h3>
+                </div>
+                <div class="about-content">
+                    <p class="about-main-text">
+                        Bridging rigorous computational theory with practical, high-impact user interface engineering.
+                    </p>
+                    <p>
+                        As a Bachelor of Computer Applications student, my methodology approaches frontend development not just as visual arrangement, but as functional code architecture. I systematically isolate rendering overhead, organize application layout flows, and build responsive logic pathways.
+                    </p>
+                    <p>
+                        From deep-diving into programmatic runtime analysis to designing heavily normalized database schemas, my foundational baseline relies on engineering clean, scalable code.
+                    </p>
+                    <div class="about-status-grid">
+                        <div class="status-box">
+                            <span>ACADEMIC FOCUS</span>
+                            <p>Computer Applications</p>
+                        </div>
+                        <div class="status-box">
+                            <span>ARCHITECTURE FOCUS</span>
+                            <p>Modular Frontend Layers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Sub-Matrix Rows -->
+            <div class="about-cards">
+                <div class="mini-card" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <span class="card-meta">FOUNDATIONAL CORE</span>
+                    <h3>Theoretical<br>Engineering</h3>
+                    <p>Leveraging formal algorithmic theory to write optimized, human-readable logic structures.</p>
+                    <div class="card-number">01</div>
+                </div>
+                <div class="mini-card interactive-intent" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <span class="card-meta">OPERATIONAL TARGET</span>
+                    <h3>Build. Profile.<br>Optimize.</h3>
+                    <div class="arrow-circle" aria-hidden="true">↗</div>
+                </div>
+                <div class="mini-card" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <span class="card-meta">DEPLOYMENT ORIGIN</span>
+                    <div class="location-cluster">
+                        <div class="location-circle">IN</div>
+                        <div>
+                            <h3>Active System</h3>
+                            <p>Operating Globally out of India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section / Core Infrastructure -->
+        <section class="section skills reveal" id="skills" aria-labelledby="skills-title">
+            <div class="section-label">
+                <span>02 //</span> <h2 id="skills-title" class="label-text">COMPUTATIONAL COMPETENCIES</h2>
+            </div>
+            <div class="skills-header">
+                <h3>Core technology stacks engineered for <span>maximum execution performance</span>.</h3>
+                <p>Ongoing optimization vectors spanning frontend engineering modules, imperative program runtimes, and relational entity management.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Stack Card 01 -->
+                <article class="skill-card grid-span-large" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <div class="skill-top">
+                        <span>01 // INTERFACE ENGINEERING LAYER</span>
+                        <span class="matrix-code">[ DOM_API // CSS_GRID ]</span>
+                    </div>
+                    <div class="skill-content">
+                        <h4>Semantic Frontend Systems</h4>
+                        <p>Constructing high-performance web structures with modern rendering patterns. Proficient in crafting component layouts that maintain high visual clarity across all devices, form factors, and viewport densities.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span>HTML5 Engine</span><span>Advanced CSS Grid/Flexbox</span><span>Vanilla Javascript (ES6+)</span><span>DOM Manipulation API</span>
+                    </div>
+                </article>
+
+                <!-- Stack Card 02 -->
+                <article class="skill-card" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <div class="skill-top">
+                        <span>02 // CORE ALGORITHMIC LOGIC</span>
+                        <span class="matrix-code">[ STACK_PTR ]</span>
+                    </div>
+                    <div class="big-letter" aria-hidden="true">C</div>
+                    <div class="skill-content">
+                        <h4>Imperative Programming</h4>
+                        <p>Writing algorithmic routines using C, emphasizing pointer manipulation, structure isolation, and explicit memory paradigms.</p>
+                    </div>
+                </article>
+
+                <!-- Stack Card 03 -->
+                <article class="skill-card" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <div class="skill-top">
+                        <span>03 // DATA INVENTORIES</span>
+                        <span class="matrix-code">[ SQL_CRUD ]</span>
+                    </div>
+                    <div class="database-icon" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="skill-content">
+                        <h4>Relational Database Layouts</h4>
+                        <p>Structuring clean, normalized data storage environments using SQL patterns for transactional durability.</p>
+                    </div>
+                </article>
+
+                <!-- Stack Card 04 -->
+                <article class="skill-card grid-span-large" data-tilt>
+                    <div class="card-glow-effect"></div>
+                    <div class="skill-top">
+                        <span>04 // ALGORITHMIC OPTIMIZATION</span>
+                        <span class="matrix-code">[ BIG_O_COMPLEXITY ]</span>
+                    </div>
+                    <div class="cs-lines" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="skill-content">
+                        <h4>Data Structures & Design</h4>
+                        <p>Analyzing computational complexity vectors, runtime patterns, array matrices, stack heaps, and linked structures to ensure efficient logic mapping.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects Section / Selected Build Implementations -->
+        <section class="section projects reveal" id="projects" aria-labelledby="projects-title">
+            <div class="section-label">
+                <span>03 //</span> <h2 id="projects-title" class="label-text">PRODUCTION WORKPLACE</h2>
+            </div>
+            <div class="projects-header">
+                <h3>Functional applications deployed from the <span>sandbox testing array</span>.</h3>
+                <p>A selection of frontend systems showcasing deep structural compliance, micro-interaction logic, and interface architecture patterns.</p>
+            </div>
+
+            <div class="projects-list">
+                <!-- Project Node 01 -->
+                <article class="project-card text-reveal-trigger">
+                    <div class="project-visual">
+                        <div class="browser-window">
+                            <div class="browser-top">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="browser-address">HTTPS://ECOMMERCE-MATRIX.PRODUCTION</div>
+                            </div>
+                            <div class="store-preview">
+                                <div class="store-nav">
+                                    <strong>COMMERCE_ENGINE // v1.0</strong>
+                                    <span>⌕ Query inventory...</span>
+                                </div>
+                                <div class="product-preview-grid">
+                                    <div><span></span><p>Module Alpha</p></div>
+                                    <div><span></span><p>Module Beta</p></div>
+                                    <div><span></span><p>Module Gamma</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">SYSTEM_LAYOUT // INTERACTIVE ENVIRONMENT // 2026</div>
+                        <h4>E-Commerce <span class="text-glow-anim">Storefront Matrix</span></h4>
+                        <p>An intricate online commercial environment incorporating multi-tier layout matrices, dynamic client-side filtering, local state cart modifications, comprehensive item searches, and normalized structure previews.</p>
+                        <div class="project-tags">
+                            <span>Semantic HTML5</span><span>Advanced Layout Grids</span><span>Dynamic State Logic (JS)</span>
+                        </div>
+                        <a href="https://priyanshtech03.github.io/shopping-website/" class="project-button" target="_blank" rel="noopener noreferrer" aria-label="Launch E-Commerce Live Build in New Window">
+                            Initialize Live System <span>↗</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project Node 02 -->
+                <article class="project-card project-reverse text-reveal-trigger">
+                    <div class="project-visual">
+                        <div class="form-preview">
+                            <div class="form-logo" aria-hidden="true">P</div>
+                            <h5>Identity Verification Gateway</h5>
+                            <p class="form-meta-text">SECURE GATEWAY SUBSYSTEM</p>
+                            <div class="fake-input" aria-hidden="true"></div>
+                            <div class="fake-input" aria-hidden="true"></div>
+                            <div class="fake-strength" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="fake-button" aria-hidden="true">EXECUTE VALIDATION</div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">UI LOGIC // VALIDATION PROTOCOLS // 2026</div>
+                        <h4>Dynamic <span class="text-glow-anim">Registration Engine</span></h4>
+                        <p>An intelligent, highly response-validated onboarding layout tool featuring real-time client-side regex checking, structural feedback mechanisms, context-aware password masking vectors, and elastic structural reflows.</p>
+                        <div class="project-tags">
+                            <span>Vanilla DOM Engine</span><span>Regex Assertions</span><span>Micro Interaction Vectors</span>
+                        </div>
+                        <a href="https://priyanshtech03.github.io/Registration_form-_verstion_2/" class="project-button" target="_blank" rel="noopener noreferrer" aria-label="Launch Registration Engine Live Build in New Window">
+                            Initialize Live System <span>↗</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section / Communications Hub -->
+        <section class="section contact reveal" id="contact" aria-labelledby="contact-title">
+            <div class="contact-label">COMMUNICATIONS SUB-ROUTINE</div>
+            <div class="contact-heading">
+                <h3 id="contact-title">Let's build <span>something computational.</span></h3>
+            </div>
+            <div class="contact-bottom">
+                <p>I am actively tracking integration targets, core engineering roles, and open-source systems architecture initiatives. Reach out through the direct connection channels below.</p>
+                <div class="contact-links">
+                    <a href="mailto:priynshuachadadiya@gmail.com" aria-label="Open Secure Email Channel">
+                        <div class="card-glow-effect"></div>
+                        <div>
+                            <span>DIRECT ENCRYPTED SMTP</span>
+                            <p>priynshuachadadiya@gmail.com</p>
+                        </div>
+                        <strong aria-hidden="true">↗</strong>
+                    </a>
+                    <a href="tel:+916351667383" aria-label="Open Direct Telephone Link">
+                        <div class="card-glow-effect"></div>
+                        <div>
+                            <span>VOICE TELEPHONY STREAM</span>
+                            <p>+91 6351667383</p>
+                        </div>
+                        <strong aria-hidden="true">↗</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global App Footer -->
+    <footer class="footer">
+        <div class="footer-name">PRIYANSH<span>.</span></div>
+        <p class="footer-meta">SYSTEM INFRASTRUCTURE BUILT WITH COMPLIANT HTML5 // MODERN CSS3 // VANILLA JS // 2026</p>
+        <a href="#home" id="backToTop" aria-label="Scroll smoothly back to apex coordinates">APEX_COORDINATES ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
