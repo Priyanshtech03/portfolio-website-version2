@@ -1,404 +1,2400 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Priyansh Uchadadiya - BCA Student, Frontend Architect, and Interactive Systems Engineer">
+
+    <meta name="description"
+        content="Portfolio of Priyansh Uchadadiya - BCA Student, Frontend Architect, and Interactive Systems Engineer">
+
     <meta name="author" content="Priyansh Uchadadiya">
+
     <meta name="theme-color" content="#020504">
-    <title>Priyansh Uchadadiya — Portfolio & Systems Architecture</title>
+
+    <title>
+        Priyansh Uchadadiya — Portfolio & Systems Architecture
+    </title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-    <!-- Performance Metric Scroll Tracker -->
-    <div class="scroll-progress" id="progressBar" role="presentation"></div>
 
-    <!-- Interactive Cyber-Emerald Particle Canvas Background -->
-    <canvas id="bg-canvas" aria-hidden="true"></canvas>
-    <div class="page-glow glow-left" aria-hidden="true"></div>
-    <div class="page-glow glow-right" aria-hidden="true"></div>
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="progressBar"></div>
 
-    <!-- Hardware Accelerated Interactive Cursor Ring -->
-    <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
 
-    <!-- App Header / Glassmorphic Navigation Matrix -->
-    <header class="header" id="header">
-        <nav class="navbar" aria-label="Main Navigation Hierarchy">
-       
-            <a href="#home" class="logo" aria-label="Priyansh Uchadadiya Home">PRIYANSH<span>.</span></a>
-            
-            <!-- Desktop Navigation Menu Container -->
-            <div class="nav-menu" role="menubar">
-                <a href="#home" class="nav-lnk active" role="menuitem">Home</a>
-                <a href="#about" class="nav-lnk" role="menuitem">About</a>
-                <a href="#skills" class="nav-lnk" role="menuitem">Skills</a>
-                <a href="#projects" class="nav-lnk" role="menuitem">Projects</a>
-                <a href="#contact" class="nav-lnk" role="menuitem">Contact</a>
-            </div>
+<!-- Background Canvas -->
+<canvas id="bg-canvas"></canvas>
 
-            <!-- Kinetic Action Group Interface -->
-            <div class="nav-actions">
-                <a href="#contact" class="nav-contact glow-btn-target desktop-only" aria-label="Initiate Consultation Channel">
-                    Establish Connection <span>↗</span>
-                </a>
-                
-                <!-- Dynamic Hardware-Accelerated Mobile Menu Trigger -->
-                <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Mobile Interface Menu" aria-expanded="false" aria-controls="mobileOverlay">
-                    <span class="bar-line"></span>
-                    <span class="bar-line"></span>
-                    <span class="bar-line"></span>
-                </button>
-            </div>
-        </nav>
-    </header>
+<div class="page-glow glow-left"></div>
+<div class="page-glow glow-right"></div>
 
-    <!-- Full-Screen Interactive Mobile Navigation Overlay Subsystem -->
-    <div class="mobile-nav-overlay" id="mobileOverlay" aria-hidden="true">
-        <div class="overlay-glow" aria-hidden="true"></div>
-        <div class="overlay-container">
-            <span class="overlay-meta-label">SYSTEM_INDEX // NAVIGATION_LINKS</span>
-            <div class="mobile-menu-links" role="menu">
-                <a href="#home" class="mobile-nav-lnk" role="menuitem"><span>01 /</span> HOME</a>
-                <a href="#about" class="mobile-nav-lnk" role="menuitem"><span>02 /</span> TECHNICAL Dossier</a>
-                <a href="#skills" class="mobile-nav-lnk" role="menuitem"><span>03 /</span> CORE COMPETENCIES</a>
-                <a href="#projects" class="mobile-nav-lnk" role="menuitem"><span>04 /</span> PRODUCTION WORKPLACE</a>
-                <a href="#contact" class="mobile-nav-lnk" role="menuitem"><span>05 /</span> COMMUNICATIONS</a>
-            </div>
-            <div class="overlay-footer">
-                <a href="mailto:priynshuachadadiya@gmail.com" class="overlay-email">priynshuachadadiya@gmail.com</a>
-                <p>SYS_STATUS // ONLINE</p>
-            </div>
-        </div>
+
+<!-- Custom Cursor -->
+<div class="custom-cursor" id="cursor"></div>
+
+
+
+<!-- HEADER -->
+
+<header class="header" id="header">
+
+<nav class="navbar">
+
+
+    <a href="#home" class="logo">
+        PRIYANSH<span>.</span>
+    </a>
+
+
+
+    <div class="nav-menu">
+
+        <a href="#home" class="nav-lnk active">
+            Home
+        </a>
+
+        <a href="#about" class="nav-lnk">
+            About
+        </a>
+
+        <a href="#skills" class="nav-lnk">
+            Skills
+        </a>
+
+        <a href="#projects" class="nav-lnk">
+            Projects
+        </a>
+
+        <a href="#contact" class="nav-lnk">
+            Contact
+        </a>
+
     </div>
 
-    <main id="main-content">
-        <!-- Hero Section / Context Initialization -->
-        <section class="hero" id="home" aria-labelledby="hero-title">
-            <div class="hero-top reveal active">
-                <div class="availability" role="status">
-                    <span class="live-dot"></span>
-                    ACTIVE / OPEN TO ADVANCED INTERACTIVE BUILDS
-                </div>
-                <p class="hero-year">SYSTEM_CORE // v2.6</p>
-            </div>
 
-            <div class="hero-layout">
-                <div class="hero-main reveal active">
-                    <h1 id="hero-title">Engineering fluid <span>digital interfaces</span> through pure, semantic logic.</h1>
-                    <div class="hero-bottom">
-                        <p class="hero-description">
-                            Computer Applications student specialized in building high-fidelity web layouts, robust application interfaces, and highly performant user interactions.
-                        </p>
-                        <div class="hero-actions">
-                            <a href="#projects" class="main-button glow-btn-target">
-                                Analyze Projects <span>↗</span>
-                            </a>
-                            <a href="#about" class="secondary-text-link">
-                                Core Dossier ↓
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Bento Identity Card Matrix -->
-                <div class="identity-card reveal active" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <div class="card-top">
-                        <span>01 // PRINCIPAL</span>
-                        <span class="system-status">SYS_OK</span>
-                    </div>
-                    <div class="identity-center">
-                        <div class="initial">P</div>
-                        <p class="card-subtitle">DEVELOPER PROFILES</p>
-                        <h2>PRIYANSH<br><span class="highlight-surname">UCHADADIYA</span></h2>
-                    </div>
-                    <div class="identity-footer">
-                        <p>BCA SYSTEMS INTERFACE ARCHITECT</p>
-                        <span>GUJARAT, IN</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Kinetic Marquee Tech Strip -->
-            <div class="tech-strip reveal active" role="marquee" aria-label="Core Technology Competencies">
-                <div class="tech-track">
-                    <span>HTML5 ENGINE <i>✦</i></span><span>DYNAMIC CSS3 <i>✦</i></span><span>ES6+ JAVASCRIPT <i>✦</i></span>
-                    <span>COMPUTATIONAL C <i>✦</i></span><span>RELATIONAL SQL <i>✦</i></span><span>DBMS ARCHITECTURE <i>✦</i></span>
-                    <span>DATA STRUCTURES <i>✦</i></span>
-                    <!-- Seamless Loop Array Duplication -->
-                    <span>HTML5 ENGINE <i>✦</i></span><span>DYNAMIC CSS3 <i>✦</i></span><span>ES6+ JAVASCRIPT <i>✦</i></span>
-                    <span>COMPUTATIONAL C <i>✦</i></span><span>RELATIONAL SQL <i>✦</i></span><span>DBMS ARCHITECTURE <i>✦</i></span>
-                    <span>DATA STRUCTURES <i>✦</i></span>
-                </div>
-            </div>
-        </section>
+    <div class="nav-actions">
 
-        <!-- About Section / Technical Dossier -->
-        <section class="section about reveal" id="about" aria-labelledby="about-title">
-            <div class="section-label">
-                <span>01 //</span> <h2 id="about-title" class="label-text">TECHNICAL PROFILE</h2>
-            </div>
 
-            <div class="about-layout">
-                <div class="about-heading">
-                    <h3>Obsessed with code clarity, structural optimization, and <span>sub-millisecond responsiveness</span>.</h3>
-                </div>
-                <div class="about-content">
-                    <p class="about-main-text">
-                        Bridging rigorous computational theory with practical, high-impact user interface engineering.
-                    </p>
-                    <p>
-                        As a Bachelor of Computer Applications student, my methodology approaches frontend development not just as visual arrangement, but as functional code architecture. I systematically isolate rendering overhead, organize application layout flows, and build responsive logic pathways.
-                    </p>
-                    <p>
-                        From deep-diving into programmatic runtime analysis to designing heavily normalized database schemas, my foundational baseline relies on engineering clean, scalable code.
-                    </p>
-                    <div class="about-status-grid">
-                        <div class="status-box">
-                            <span>ACADEMIC FOCUS</span>
-                            <p>Computer Applications</p>
-                        </div>
-                        <div class="status-box">
-                            <span>ARCHITECTURE FOCUS</span>
-                            <p>Modular Frontend Layers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <a href="#contact"
+           class="nav-contact desktop-only">
 
-            <!-- Bento Sub-Matrix Rows -->
-            <div class="about-cards">
-                <div class="mini-card" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <span class="card-meta">FOUNDATIONAL CORE</span>
-                    <h3>Theoretical<br>Engineering</h3>
-                    <p>Leveraging formal algorithmic theory to write optimized, human-readable logic structures.</p>
-                    <div class="card-number">01</div>
-                </div>
-                <div class="mini-card interactive-intent" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <span class="card-meta">OPERATIONAL TARGET</span>
-                    <h3>Build. Profile.<br>Optimize.</h3>
-                    <div class="arrow-circle" aria-hidden="true">↗</div>
-                </div>
-                <div class="mini-card" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <span class="card-meta">DEPLOYMENT ORIGIN</span>
-                    <div class="location-cluster">
-                        <div class="location-circle">IN</div>
-                        <div>
-                            <h3>Active System</h3>
-                            <p>Operating Globally out of India</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            Establish Connection
+            <span>
+                ↗
+            </span>
 
-        <!-- Skills Section / Core Infrastructure -->
-        <section class="section skills reveal" id="skills" aria-labelledby="skills-title">
-            <div class="section-label">
-                <span>02 //</span> <h2 id="skills-title" class="label-text">COMPUTATIONAL COMPETENCIES</h2>
-            </div>
-            <div class="skills-header">
-                <h3>Core technology stacks engineered for <span>maximum execution performance</span>.</h3>
-                <p>Ongoing optimization vectors spanning frontend engineering modules, imperative program runtimes, and relational entity management.</p>
-            </div>
+        </a>
 
-            <div class="bento-grid">
-                <!-- Stack Card 01 -->
-                <article class="skill-card grid-span-large" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <div class="skill-top">
-                        <span>01 // INTERFACE ENGINEERING LAYER</span>
-                        <span class="matrix-code">[ DOM_API // CSS_GRID ]</span>
-                    </div>
-                    <div class="skill-content">
-                        <h4>Semantic Frontend Systems</h4>
-                        <p>Constructing high-performance web structures with modern rendering patterns. Proficient in crafting component layouts that maintain high visual clarity across all devices, form factors, and viewport densities.</p>
-                    </div>
-                    <div class="skill-tags">
-                        <span>HTML5 Engine</span><span>Advanced CSS Grid/Flexbox</span><span>Vanilla Javascript (ES6+)</span><span>DOM Manipulation API</span>
-                    </div>
-                </article>
 
-                <!-- Stack Card 02 -->
-                <article class="skill-card" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <div class="skill-top">
-                        <span>02 // CORE ALGORITHMIC LOGIC</span>
-                        <span class="matrix-code">[ STACK_PTR ]</span>
-                    </div>
-                    <div class="big-letter" aria-hidden="true">C</div>
-                    <div class="skill-content">
-                        <h4>Imperative Programming</h4>
-                        <p>Writing algorithmic routines using C, emphasizing pointer manipulation, structure isolation, and explicit memory paradigms.</p>
-                    </div>
-                </article>
 
-                <!-- Stack Card 03 -->
-                <article class="skill-card" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <div class="skill-top">
-                        <span>03 // DATA INVENTORIES</span>
-                        <span class="matrix-code">[ SQL_CRUD ]</span>
-                    </div>
-                    <div class="database-icon" aria-hidden="true">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <div class="skill-content">
-                        <h4>Relational Database Layouts</h4>
-                        <p>Structuring clean, normalized data storage environments using SQL patterns for transactional durability.</p>
-                    </div>
-                </article>
+        <button class="menu-toggle-btn"
+                id="menuToggle"
+                aria-label="Open Menu">
 
-                <!-- Stack Card 04 -->
-                <article class="skill-card grid-span-large" data-tilt>
-                    <div class="card-glow-effect"></div>
-                    <div class="skill-top">
-                        <span>04 // ALGORITHMIC OPTIMIZATION</span>
-                        <span class="matrix-code">[ BIG_O_COMPLEXITY ]</span>
-                    </div>
-                    <div class="cs-lines" aria-hidden="true">
-                        <span></span><span></span><span></span><span></span>
-                    </div>
-                    <div class="skill-content">
-                        <h4>Data Structures & Design</h4>
-                        <p>Analyzing computational complexity vectors, runtime patterns, array matrices, stack heaps, and linked structures to ensure efficient logic mapping.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
 
-        <!-- Projects Section / Selected Build Implementations -->
-      <!-- Projects Section / Selected Build Implementations -->
-        <section class="section projects reveal" id="projects" aria-labelledby="projects-title">
-            <div class="section-label">
-                <span>03 //</span> <h2 id="projects-title" class="label-text">PRODUCTION WORKPLACE</h2>
-            </div>
-            <div class="projects-header">
-                <h3>Functional applications deployed from the <span>sandbox testing array</span>.</h3>
-                <p>A selection of frontend systems showcasing deep structural compliance, micro-interaction logic, and interface architecture patterns.</p>
-            </div>
+            <span class="bar-line"></span>
 
-            <div class="projects-list">
-                <!-- Project Node 01 -->
-                <article class="project-card text-reveal-trigger">
-                    <div class="project-visual">
-                        <div class="browser-window">
-                            <div class="browser-top">
-                                <div class="browser-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <div class="browser-address">HTTPS://ECOMMERCE-MATRIX.PRODUCTION</div>
-                            </div>
-                            <div class="store-preview">
-                                <div class="store-nav">
-                                    <strong>COMMERCE_ENGINE // v1.0</strong>
-                                    <span class="search-input">⌕ Query inventory...</span>
-                                </div>
-                                <div class="product-preview-grid">
-                                    <div class="product-item"><span></span><p>Module Alpha</p></div>
-                                    <div class="product-item"><span></span><p>Module Beta</p></div>
-                                    <div class="product-item"><span></span><p>Module Gamma</p></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">SYSTEM_LAYOUT // INTERACTIVE ENVIRONMENT // 2026</div>
-                        <h4>E-Commerce <span class="text-glow-anim">Storefront Matrix</span></h4>
-                        <p>An intricate online commercial environment incorporating multi-tier layout matrices, dynamic client-side filtering, local state cart modifications, comprehensive item searches, and normalized structure previews.</p>
-                        <div class="project-tags">
-                            <span>Semantic HTML5</span><span>Advanced Layout Grids</span><span>Dynamic State Logic (JS)</span>
-                        </div>
-                        <a href="https://priyanshtech03.github.io/shopping-website/" class="project-button" target="_blank" rel="noopener noreferrer" aria-label="Launch E-Commerce Live Build in New Window">
-                            Initialize Live System <span class="btn-arrow">↗</span>
-                        </a>
-                    </div>
-                </article>
+            <span class="bar-line"></span>
 
-                <!-- Project Node 02 -->
-                <article class="project-card project-reverse text-reveal-trigger">
-                    <div class="project-visual">
-                        <div class="form-preview">
-                            <div class="form-header">
-                                <div class="form-logo" aria-hidden="true">P</div>
-                                <div>
-                                    <h5>Identity Verification Gateway</h5>
-                                    <p class="form-meta-text">SECURE GATEWAY SUBSYSTEM</p>
-                                </div>
-                            </div>
-                            <div class="form-fields">
-                                <div class="fake-input-wrapper">
-                                    <span class="input-label">SYS_AUTH // USER_ID</span>
-                                    <div class="fake-input" aria-hidden="true"></div>
-                                </div>
-                                <div class="fake-input-wrapper">
-                                    <span class="input-label">SYS_AUTH // PASSKEY</span>
-                                    <div class="fake-input" aria-hidden="true"></div>
-                                </div>
-                            </div>
-                            <div class="fake-strength" aria-hidden="true">
-                                <span class="strength-bar active"></span>
-                                <span class="strength-bar active"></span>
-                                <span class="strength-bar"></span>
-                            </div>
-                            <div class="fake-button" aria-hidden="true">EXECUTE VALIDATION</div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">UI LOGIC // VALIDATION PROTOCOLS // 2026</div>
-                        <h4>Dynamic <span class="text-glow-anim">Registration Engine</span></h4>
-                        <p>An intelligent, highly response-validated onboarding layout tool featuring real-time client-side regex checking, structural feedback mechanisms, context-aware password masking vectors, and elastic structural reflows.</p>
-                        <div class="project-tags">
-                            <span>Vanilla DOM Engine</span><span>Regex Assertions</span><span>Micro Interaction Vectors</span>
-                        </div>
-                        <a href="https://priyanshtech03.github.io/Registration_form-_verstion_2/" class="project-button" target="_blank" rel="noopener noreferrer" aria-label="Launch Registration Engine Live Build in New Window">
-                            Initialize Live System <span class="btn-arrow">↗</span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <!-- Contact Section / Communications Hub -->
-        <section class="section contact reveal" id="contact" aria-labelledby="contact-title">
-            <div class="contact-label">COMMUNICATIONS SUB-ROUTINE</div>
-            <div class="contact-heading">
-                <h3 id="contact-title">Let's build <span>something computational.</span></h3>
-            </div>
-            <div class="contact-bottom">
-                <p>I am actively tracking integration targets, core engineering roles, and open-source systems architecture initiatives. Reach out through the direct connection channels below.</p>
-                <div class="contact-links">
-                    <a href="mailto:priynshuachadadiya@gmail.com" aria-label="Open Secure Email Channel">
-                        <div class="card-glow-effect"></div>
-                        <div>
-                            <span>DIRECT ENCRYPTED SMTP</span>
-                            <p>priynshuachadadiya@gmail.com</p>
-                        </div>
-                        <strong aria-hidden="true">↗</strong>
-                    </a>
-                    <a href="tel:+916351667383" aria-label="Open Direct Telephone Link">
-                        <div class="card-glow-effect"></div>
-                        <div>
-                            <span>VOICE TELEPHONY STREAM</span>
-                            <p>+91 6351667383</p>
-                        </div>
-                        <strong aria-hidden="true">↗</strong>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+            <span class="bar-line"></span>
 
-    <!-- Global App Footer -->
-    <footer class="footer">
-        <div class="footer-name">PRIYANSH<span>.</span></div>
-        <p class="footer-meta">SYSTEM INFRASTRUCTURE BUILT WITH COMPLIANT HTML5 // MODERN CSS3 // VANILLA JS // 2026</p>
-        <a href="#home" id="backToTop" aria-label="Scroll smoothly back to apex coordinates">APEX_COORDINATES ↑</a>
-    </footer>
 
-    <script src="script.js"></script>
+        </button>
+
+
+    </div>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-nav-overlay" id="mobileOverlay">
+
+
+<div class="overlay-container">
+
+
+<span class="overlay-meta-label">
+SYSTEM_INDEX // NAVIGATION_LINKS
+</span>
+
+
+
+<div class="mobile-menu-links">
+
+
+<a href="#home" class="mobile-nav-lnk">
+
+<span>
+01 /
+</span>
+
+HOME
+
+</a>
+
+
+
+<a href="#about" class="mobile-nav-lnk">
+
+<span>
+02 /
+</span>
+
+TECHNICAL DOSSIER
+
+</a>
+
+
+
+<a href="#skills" class="mobile-nav-lnk">
+
+<span>
+03 /
+</span>
+
+CORE COMPETENCIES
+
+</a>
+
+
+
+<a href="#projects" class="mobile-nav-lnk">
+
+<span>
+04 /
+</span>
+
+PROJECT SYSTEMS
+
+</a>
+
+
+
+<a href="#contact" class="mobile-nav-lnk">
+
+<span>
+05 /
+</span>
+
+COMMUNICATIONS
+
+</a>
+
+
+</div>
+
+
+
+
+<div class="overlay-footer">
+
+<a href="mailto:priynshuachadadiya@gmail.com">
+
+priynshuachadadiya@gmail.com
+
+</a>
+
+
+<p>
+SYS_STATUS // ONLINE
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<main id="main-content">
+
+
+
+
+
+<!-- HERO SECTION -->
+
+
+<section class="hero" id="home">
+
+
+
+<div class="hero-top">
+
+
+<div class="availability">
+
+<span class="live-dot"></span>
+
+ACTIVE / OPEN TO ADVANCED INTERACTIVE BUILDS
+
+</div>
+
+
+
+<p class="hero-year">
+
+SYSTEM_CORE // v2.6
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="hero-layout">
+
+
+
+<div class="hero-main">
+
+
+<h1>
+
+Engineering fluid
+
+<span>
+digital interfaces
+</span>
+
+through pure, semantic logic.
+
+</h1>
+
+
+
+<div class="hero-bottom">
+
+
+<p class="hero-description">
+
+Computer Applications student specialized in building
+high-fidelity web layouts, robust application interfaces,
+and highly performant user interactions.
+
+</p>
+
+
+
+
+<div class="hero-actions">
+
+
+<a href="#projects"
+class="main-button">
+
+Analyze Projects
+
+<span>
+↗
+</span>
+
+</a>
+
+
+
+<a href="#about"
+class="secondary-text-link">
+
+Core Dossier ↓
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="identity-card">
+
+
+<div class="card-glow-effect"></div>
+
+
+
+<div class="card-top">
+
+
+<span>
+01 // PRINCIPAL
+</span>
+
+
+<span class="system-status">
+SYS_OK
+</span>
+
+
+</div>
+
+
+
+
+<div class="identity-center">
+
+
+<div class="initial">
+P
+</div>
+
+
+
+<p>
+DEVELOPER PROFILES
+</p>
+
+
+
+<h2>
+
+PRIYANSH
+
+<br>
+
+<span>
+UCHADADIYA
+</span>
+
+
+</h2>
+
+
+
+</div>
+
+
+
+
+
+<div class="identity-footer">
+
+
+<p>
+BCA SYSTEMS INTERFACE ARCHITECT
+</p>
+
+
+<span>
+GUJARAT, IN
+</span>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+</div>
+<!-- TECH STRIP -->
+
+<div class="tech-strip">
+
+<div class="tech-track">
+
+<span>
+HTML5 ENGINE ✦
+</span>
+
+<span>
+DYNAMIC CSS3 ✦
+</span>
+
+<span>
+ES6+ JAVASCRIPT ✦
+</span>
+
+<span>
+COMPUTATIONAL C ✦
+</span>
+
+<span>
+RELATIONAL SQL ✦
+</span>
+
+<span>
+DBMS ARCHITECTURE ✦
+</span>
+
+<span>
+DATA STRUCTURES ✦
+</span>
+
+
+<span>
+HTML5 ENGINE ✦
+</span>
+
+<span>
+DYNAMIC CSS3 ✦
+</span>
+
+<span>
+ES6+ JAVASCRIPT ✦
+</span>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ==========================
+ABOUT SECTION
+========================== -->
+
+
+<section class="section about reveal" id="about">
+
+
+
+<div class="section-label">
+
+<span>
+01 //
+</span>
+
+
+<h2>
+TECHNICAL PROFILE
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="about-layout">
+
+
+
+<div class="about-heading">
+
+
+<h3>
+
+Obsessed with code clarity,
+structural optimization,
+and
+
+<span>
+high-performance interfaces
+</span>.
+
+</h3>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="about-content">
+
+
+
+<p class="about-main-text">
+
+Bridging computational theory
+with practical user interface engineering.
+
+</p>
+
+
+
+<p>
+
+As a Bachelor of Computer Applications student,
+my approach focuses on creating clean,
+responsive and scalable frontend systems.
+
+</p>
+
+
+
+
+<p>
+
+From algorithmic thinking to database structures,
+I build solutions with optimized logic,
+modern layouts and maintainable code.
+
+</p>
+
+
+
+
+<div class="about-status-grid">
+
+
+<div class="status-box">
+
+
+<span>
+ACADEMIC FOCUS
+</span>
+
+
+<p>
+Computer Applications
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="status-box">
+
+
+<span>
+ARCHITECTURE FOCUS
+</span>
+
+
+<p>
+Frontend Systems
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="about-cards">
+
+
+
+<div class="mini-card">
+
+
+<span class="card-meta">
+
+FOUNDATIONAL CORE
+
+</span>
+
+
+<h3>
+
+Theoretical
+
+<br>
+
+Engineering
+
+</h3>
+
+
+
+<p>
+
+Using programming concepts
+and algorithms to create
+optimized solutions.
+
+</p>
+
+
+
+<div class="card-number">
+01
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mini-card interactive-intent">
+
+
+<span class="card-meta">
+
+OPERATIONAL TARGET
+
+</span>
+
+
+
+<h3>
+
+Build.
+
+<br>
+
+Optimize.
+
+</h3>
+
+
+
+<div class="arrow-circle">
+
+↗
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mini-card">
+
+
+<span class="card-meta">
+
+DEPLOYMENT ORIGIN
+
+</span>
+
+
+
+<div class="location-cluster">
+
+
+<div class="location-circle">
+
+IN
+
+</div>
+
+
+
+<div>
+
+
+<h3>
+
+Active System
+
+</h3>
+
+
+<p>
+
+Operating from India
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ==========================
+SKILLS SECTION
+========================== -->
+
+
+<section class="section skills reveal" id="skills">
+
+
+
+
+
+<div class="section-label">
+
+
+<span>
+02 //
+</span>
+
+
+<h2>
+COMPUTATIONAL COMPETENCIES
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="skills-header">
+
+
+<h3>
+
+Core technology stacks engineered for
+
+<span>
+maximum execution performance
+</span>.
+
+</h3>
+
+
+
+
+<p>
+
+Frontend development,
+programming logic,
+database systems and
+computational structures.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="bento-grid">
+
+
+
+
+
+
+<!-- SKILL CARD 1 -->
+
+
+<article class="skill-card grid-span-large">
+
+
+
+<div class="skill-top">
+
+
+<span>
+
+01 // INTERFACE ENGINEERING
+
+</span>
+
+
+<span>
+
+[ HTML // CSS // JS ]
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="skill-content">
+
+
+<h4>
+
+Semantic Frontend Systems
+
+</h4>
+
+
+
+<p>
+
+Building responsive interfaces
+using modern HTML5,
+CSS3 layouts and JavaScript logic.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="skill-tags">
+
+
+<span>
+HTML5
+</span>
+
+
+<span>
+CSS Grid
+</span>
+
+
+<span>
+Flexbox
+</span>
+
+
+<span>
+JavaScript ES6+
+</span>
+
+
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<!-- SKILL CARD 2 -->
+
+
+<article class="skill-card">
+
+
+
+<div class="skill-top">
+
+
+<span>
+
+02 // PROGRAMMING LOGIC
+
+</span>
+
+
+<span>
+
+[ C_LANGUAGE ]
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="big-letter">
+
+C
+
+</div>
+
+
+
+
+<div class="skill-content">
+
+
+<h4>
+
+Imperative Programming
+
+</h4>
+
+
+
+<p>
+
+Developing algorithms,
+data handling and logical
+programming solutions.
+
+</p>
+
+
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<!-- SKILL CARD 3 -->
+
+
+<article class="skill-card">
+
+
+
+<div class="skill-top">
+
+
+<span>
+
+03 // DATABASE SYSTEMS
+
+</span>
+
+
+<span>
+
+[ SQL_CRUD ]
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="database-icon">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+
+</div>
+
+
+
+
+
+<div class="skill-content">
+
+
+<h4>
+
+Database Management
+
+</h4>
+
+
+<p>
+
+Working with relational
+database concepts and SQL queries.
+
+</p>
+
+
+
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<!-- SKILL CARD 4 -->
+
+
+<article class="skill-card grid-span-large">
+
+
+
+<div class="skill-top">
+
+
+<span>
+
+04 // ALGORITHMIC STRUCTURES
+
+</span>
+
+
+<span>
+
+[ DATA_STRUCTURES ]
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="skill-content">
+
+
+<h4>
+
+Data Structures & Optimization
+
+</h4>
+
+
+
+<p>
+
+Understanding arrays,
+linked lists, stacks,
+queues, trees and graphs.
+
+</p>
+
+
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+</div>
+
+
+
+
+</section>
+<!-- ==========================
+PROJECTS SECTION
+========================== -->
+
+
+<section class="section projects reveal" id="projects">
+
+
+
+<div class="section-label">
+
+<span>
+03 //
+</span>
+
+
+<h2>
+PRODUCTION WORKPLACE
+</h2>
+
+
+</div>
+
+
+
+
+
+
+<div class="projects-header">
+
+
+<h3>
+
+Functional applications deployed from the
+
+<span>
+sandbox testing array
+</span>.
+
+</h3>
+
+
+
+<p>
+
+A collection of frontend systems showcasing
+interactive design, UI engineering and
+application logic.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="projects-list">
+
+
+
+
+
+
+
+<!-- ==========================
+PROJECT 01
+========================== -->
+
+
+<article class="project-card">
+
+
+
+
+
+
+<div class="project-visual">
+
+
+
+<div class="browser-window">
+
+
+
+
+
+<div class="browser-top">
+
+
+<div class="browser-dots">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+
+
+
+
+<div class="browser-address">
+
+HTTPS://SHOPEASE-STORE.SYSTEM
+
+</div>
+
+
+
+
+<div class="project-status">
+
+● LIVE
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="store-preview">
+
+
+
+
+
+<div class="store-nav">
+
+
+<div class="store-logo">
+
+ShopEase<span>.</span>
+
+</div>
+
+
+
+
+
+<div class="store-search">
+
+Search products...
+
+</div>
+
+
+
+
+
+<div class="store-icons">
+
+♡ 🛒
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="store-banner">
+
+
+<div>
+
+
+<h6>
+
+PREMIUM DIGITAL STORE
+
+</h6>
+
+
+
+<h5>
+
+Smart Shopping
+
+<span>
+
+Experience
+
+</span>
+
+</h5>
+
+
+
+
+<button>
+
+Explore
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="product-preview-grid">
+
+
+
+
+
+<div class="product-item">
+
+
+<div class="product-image">
+
+<span></span>
+
+</div>
+
+
+
+<h6>
+
+Smart Lamp
+
+</h6>
+
+
+<p>
+
+₹499
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="product-item">
+
+
+<div class="product-image">
+
+<span></span>
+
+</div>
+
+
+
+<h6>
+
+Backpack
+
+</h6>
+
+
+<p>
+
+₹799
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="product-item">
+
+
+<div class="product-image">
+
+<span></span>
+
+</div>
+
+
+
+<h6>
+
+Charging Pad
+
+</h6>
+
+
+<p>
+
+₹299
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="project-info">
+
+
+
+
+
+<div class="project-category">
+
+SYSTEM_LAYOUT // ECOMMERCE // 2026
+
+</div>
+
+
+
+
+
+
+<h4>
+
+E-Commerce
+
+<span class="text-glow-anim">
+
+Storefront Matrix
+
+</span>
+
+
+</h4>
+
+
+
+
+
+<p>
+
+A complete shopping interface featuring
+product browsing, search functionality,
+cart management and responsive layouts.
+
+</p>
+
+
+
+
+
+
+
+<div class="project-features">
+
+
+<span>
+⚡ Dynamic Cart
+</span>
+
+
+<span>
+🔍 Search
+</span>
+
+
+<span>
+◈ Local Storage
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="project-tags">
+
+
+<span>
+HTML5
+</span>
+
+
+<span>
+CSS3
+</span>
+
+
+<span>
+JavaScript
+</span>
+
+
+<span>
+Responsive UI
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<a href="https://priyanshtech03.github.io/shopping-website/"
+class="project-button"
+target="_blank">
+
+
+Initialize Live System
+
+<span>
+↗
+</span>
+
+
+</a>
+
+
+
+
+</div>
+
+
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<!-- ==========================
+PROJECT 02
+========================== -->
+
+
+<article class="project-card project-reverse">
+
+
+
+
+
+
+
+<div class="project-visual">
+
+
+
+
+
+<div class="form-preview">
+
+
+
+
+
+<div class="form-header">
+
+
+
+
+
+<div class="form-logo">
+
+P
+
+</div>
+
+
+
+
+
+<div>
+
+
+<h5>
+
+Identity Verification
+
+</h5>
+
+
+<p>
+
+SECURE AUTH SYSTEM
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="project-status">
+
+● SECURE
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="security-panel">
+
+
+
+<div>
+
+<span></span>
+
+ENCRYPTION ACTIVE
+
+</div>
+
+
+
+<div>
+
+<span></span>
+
+VALIDATION READY
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="form-fields">
+
+
+
+
+
+
+<div class="fake-input-wrapper">
+
+
+<span>
+
+USER_ID
+
+</span>
+
+
+<div class="fake-input">
+
+priyansh_user
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="fake-input-wrapper">
+
+
+<span>
+
+PASSWORD_KEY
+
+</span>
+
+
+<div class="fake-input">
+
+********
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="fake-input-wrapper">
+
+
+<span>
+
+EMAIL_PROTOCOL
+
+</span>
+
+
+<div class="fake-input">
+
+user@email.com
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="fake-strength">
+
+
+<span>
+
+PASSWORD STRENGTH
+
+</span>
+
+
+
+<div>
+
+
+<span class="strength-bar active"></span>
+
+<span class="strength-bar active"></span>
+
+<span class="strength-bar active"></span>
+
+<span class="strength-bar"></span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<button class="fake-button">
+
+EXECUTE VALIDATION
+
+<span>
+↗
+</span>
+
+
+</button>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="project-info">
+
+
+
+
+
+<div class="project-category">
+
+UI_LOGIC // VALIDATION // 2026
+
+</div>
+
+
+
+
+
+
+
+<h4>
+
+Dynamic
+
+<span class="text-glow-anim">
+
+Registration Engine
+
+</span>
+
+
+</h4>
+
+
+
+
+
+
+
+<p>
+
+Interactive registration system with
+real-time validation, password checking,
+and user-friendly feedback logic.
+
+</p>
+
+
+
+
+
+
+
+<div class="project-features">
+
+
+<span>
+
+⚡ Live Validation
+
+</span>
+
+
+<span>
+
+🔐 Password Security
+
+</span>
+
+
+<span>
+
+◈ Regex Logic
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="project-tags">
+
+
+<span>
+
+HTML5
+
+</span>
+
+
+<span>
+
+CSS3
+
+</span>
+
+
+<span>
+
+JavaScript
+
+</span>
+
+
+<span>
+
+DOM API
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+<a href="https://priyanshtech03.github.io/Registration_form-_verstion_2/"
+class="project-button"
+target="_blank">
+
+
+Initialize Live System
+
+
+<span>
+
+↗
+
+</span>
+
+
+</a>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</article>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</section>
+<!-- ==========================
+CONTACT SECTION
+========================== -->
+
+
+<section class="section contact reveal" id="contact">
+
+
+
+<div class="contact-label">
+
+COMMUNICATIONS SUB-ROUTINE
+
+</div>
+
+
+
+
+
+
+
+<div class="contact-heading">
+
+
+<h3>
+
+Let's build
+
+<span>
+
+something computational.
+
+</span>
+
+
+</h3>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="contact-bottom">
+
+
+
+
+
+<p>
+
+I am actively looking for opportunities,
+collaborations and projects involving
+frontend development, application systems
+and modern web technologies.
+
+</p>
+
+
+
+
+
+
+
+
+
+<div class="contact-links">
+
+
+
+
+
+
+
+<a href="mailto:priynshuachadadiya@gmail.com">
+
+
+
+
+
+<div class="card-glow-effect"></div>
+
+
+
+
+
+<div>
+
+
+<span>
+
+DIRECT EMAIL CHANNEL
+
+</span>
+
+
+
+<p>
+
+priynshuachadadiya@gmail.com
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<strong>
+
+↗
+
+</strong>
+
+
+
+
+</a>
+
+
+
+
+
+
+
+
+
+<a href="tel:+916351667383">
+
+
+
+
+
+<div class="card-glow-effect"></div>
+
+
+
+
+
+<div>
+
+
+<span>
+
+VOICE CONTACT
+
+</span>
+
+
+
+<p>
+
++91 6351667383
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<strong>
+
+↗
+
+</strong>
+
+
+
+
+</a>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ==========================
+FOOTER
+========================== -->
+
+
+
+<footer class="footer">
+
+
+
+
+
+<div class="footer-name">
+
+PRIYANSH<span>.</span>
+
+</div>
+
+
+
+
+
+
+
+<p class="footer-meta">
+
+SYSTEM INFRASTRUCTURE BUILT WITH
+HTML5 // CSS3 // JAVASCRIPT // 2026
+
+</p>
+
+
+
+
+
+
+
+<a href="#home" id="backToTop">
+
+APEX_COORDINATES ↑
+
+</a>
+
+
+
+
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+
+
+
 </body>
+
 </html>
