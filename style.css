@@ -2065,122 +2065,461 @@ body.mobile-nav-lock {
    ========================================================================== */
 
 
+/* ==========================================================================
+   PROJECT SECTION DESIGN REBUILD & PREMIUM ANIMATIONS
+   ========================================================================== */
+
 .projects-header {
-
-    margin-bottom:80px;
-
+    margin-bottom: 80px;
 }
-
-
 
 .projects-header h3 {
-
-    font-size:42px;
-
+    font-size: clamp(32px, 3.8vw, 42px);
+    line-height: 1.2;
 }
 
-
-
-.projects-header span {
-
-    color:
-    var(--accent-bright);
-
+.projects-header h3 span {
+    color: var(--accent-bright);
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.25);
 }
 
-
+.projects-header p {
+    color: var(--text-dim);
+    margin-top: 15px;
+    font-size: 16px;
+    max-width: 700px;
+}
 
 .projects-list {
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:140px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
 }
-
-
 
 .project-card {
-
-    display:grid;
-
-    grid-template-columns:
-    1.15fr .85fr;
-
-    gap:80px;
-
-    align-items:center;
-
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
 }
 
+/* Reverse grid on even items to create alternating pattern layout */
+.project-reverse {
+    grid-template-columns: 0.9fr 1.1fr;
+}
 
+.project-reverse .project-visual {
+    grid-column: 2;
+}
 
+.project-reverse .project-info {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* --- Visual Mockup Container Rebuild --- */
 .project-visual {
-
-    min-height:460px;
-
-    padding:60px;
-
-    border-radius:32px;
-
-    border:
-    1px solid var(--surface-border);
-
-    background:
-    rgba(0,255,204,.03);
-
+    position: relative;
+    min-height: 400px;
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid var(--surface-border);
+    background: radial-gradient(100% 100% at 0% 0%, rgba(0, 255, 204, 0.04) 0%, rgba(2, 5, 4, 0.4) 100%);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: var(--transition-smooth);
 }
 
+.project-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 204, 0.08), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
 
+.project-card:hover .project-visual {
+    border-color: rgba(0, 255, 204, 0.25);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 204, 0.05);
+    transform: translateY(-5px);
+}
+
+.project-card:hover .project-visual::before {
+    opacity: 1;
+}
+
+/* --- E-Commerce Mockup Elements --- */
+.browser-window {
+    width: 100%;
+    background: rgba(4, 14, 10, 0.7);
+    border: 1px solid rgba(0, 255, 204, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+}
+
+.browser-top {
+    display: flex;
+    align-items: center;
+    background: rgba(2, 5, 4, 0.9);
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+    gap: 15px;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.browser-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 255, 204, 0.2);
+}
+
+.browser-dots span:first-child { background: #ef4444; }
+.browser-dots span:nth-child(2) { background: #f59e0b; }
+.browser-dots span:last-child { background: #10b981; }
+
+.browser-address {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    background: rgba(0, 255, 204, 0.05);
+    padding: 3px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 204, 0.05);
+    flex-grow: 1;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.store-preview {
+    padding: 20px;
+}
+
+.store-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.store-nav strong {
+    font-family: var(--font-mono);
+    color: var(--text-main);
+}
+
+.search-input {
+    color: var(--text-dim);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 204, 0.05);
+}
+
+.product-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.product-item {
+    background: rgba(0, 255, 204, 0.02);
+    border: 1px solid rgba(0, 255, 204, 0.05);
+    border-radius: 8px;
+    padding: 15px 10px;
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.product-item span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 10px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+    opacity: 0.8;
+}
+
+.product-item p {
+    font-size: 10px !important;
+    margin: 0 !important;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.project-card:hover .product-item {
+    transform: translateY(-2px);
+    border-color: rgba(0, 255, 204, 0.2);
+    background: rgba(0, 255, 204, 0.05);
+}
+
+/* --- Interactive Auth Form Mockup Elements --- */
+.form-preview {
+    width: 100%;
+    max-width: 340px;
+    background: rgba(4, 14, 10, 0.85);
+    border: 1px solid rgba(0, 255, 204, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+    padding-bottom: 15px;
+}
+
+.form-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+    border: 1px solid var(--accent-bright);
+    color: var(--accent-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-header h5 {
+    font-size: 13px;
+    color: var(--text-main);
+}
+
+.form-meta-text {
+    font-family: var(--font-mono);
+    font-size: 8px !important;
+    letter-spacing: 1px;
+    color: var(--accent-bright) !important;
+    margin: 0 !important;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.fake-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: var(--text-dim);
+}
+
+.fake-input {
+    height: 30px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 255, 204, 0.1);
+}
+
+.fake-strength {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.strength-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.strength-bar.active {
+    background: var(--accent-bright);
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+.fake-button {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 10px;
+    background: rgba(0, 255, 204, 0.05);
+    border: 1px solid var(--accent-bright);
+    color: var(--accent-bright);
+    border-radius: 6px;
+    letter-spacing: 1px;
+}
+
+.project-card:hover .form-preview {
+    border-color: rgba(0, 255, 204, 0.3);
+}
+
+/* --- Project Content Info Rebuild --- */
+.project-category {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-bright);
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
 
 .project-info h4 {
-
-    font-size:36px;
-
-    margin-bottom:24px;
-
+    font-size: clamp(28px, 3.2vw, 38px);
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.15;
 }
-
-
 
 .project-info p {
-
-    color:
-    rgba(240,253,244,.65);
-
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
-
-
 
 .project-tags {
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-bottom:40px;
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 35px;
 }
 
-
-
 .project-tags span {
+    font-size: 11px;
+    padding: 4px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--surface-border);
+    background: rgba(0, 255, 204, 0.01);
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
 
-    padding:
-    6px 16px;
+.project-card:hover .project-tags span {
+    border-color: rgba(0, 255, 204, 0.15);
+    background: rgba(0, 255, 204, 0.03);
+    color: var(--text-main);
+}
 
-    border-radius:100px;
+/* --- HIGH PERFORMANCE ANIMATED LINK BUTTONS --- */
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bg-dark) !important;
+    background: var(--accent-bright);
+    padding: 14px 28px;
+    border-radius: 100px;
+    border: 1px solid var(--accent-bright);
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.15);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-    border:
-    1px solid var(--surface-border);
+/* Sliding Background Hover Action */
+.project-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: all 0.6s ease;
+    z-index: -1;
+}
 
-    color:
-    var(--text-muted);
+/* Secondary deep background slide up */
+.project-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bg-dark);
+    transform: translateY(102%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: -1;
+    border-radius: 100px;
+}
 
+.project-button .btn-arrow {
+    font-size: 15px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block;
+}
+
+/* Hover Interactive State Transitions */
+.project-button:hover {
+    color: var(--accent-bright) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 255, 204, 0.35);
+    border-color: var(--accent-bright);
+}
+
+.project-button:hover::after {
+    transform: translateY(0);
+}
+
+.project-button:hover::before {
+    left: 100%;
+}
+
+.project-button:hover .btn-arrow {
+    transform: translate(3px, -3px);
+    animation: arrowPulse 1s infinite alternate ease-in-out;
+}
+
+/* Keyframe for magnetic arrow effect */
+@keyframes arrowPulse {
+    0% {
+        transform: translate(3px, -3px) scale(1);
+    }
+    100% {
+        transform: translate(6px, -6px) scale(1.15);
+    }
+}
+
+/* --- Responsive Adaptations --- */
+@media (max-width: 1280px) {
+    .project-card, .project-reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .project-reverse .project-visual {
+        grid-column: 1;
+    }
+    .project-visual {
+        min-height: auto;
+    }
 }
 
 
