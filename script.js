@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // System Capabilities Matrix
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
     /**
      * ==========================================================================
